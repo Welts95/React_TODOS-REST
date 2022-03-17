@@ -1,10 +1,7 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { ModificarTodo } from "./ModificarTodo";
 
-export function TodoItem({ todo, onDeleteTodo, onTodoUpdated }) {
-  const titleRef = useRef();
-  const detailsRef = useRef();
-  const [titol, setTitol] = useState(todo.title);
-  const [detalls, setTDetalls] = useState(todo.details);
+export function TodoItem({ todo, onDeleteTodo, onTodoUpdated, loadTodos }) {
   const [mostrarForm, setMostrarForm] = useState(false);
 
   return (
@@ -32,38 +29,12 @@ export function TodoItem({ todo, onDeleteTodo, onTodoUpdated }) {
         >
           {"🗑️"}
         </span>
-        <div
-          className="FormulariModificar-TODO"
-          style={{ display: mostrarForm ? "block" : "none" }}
-        >
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              const title = titleRef.current.value;
-              const details = detailsRef.current.value;
-              titleRef.current.value = todo.title;
-              detailsRef.current.value = todo.details;
-              onTodoUpdated({ ...todo, title, details });
-              setMostrarForm((s) => !s);
-            }}
-          >
-            {"Títol: "}
-            <input
-              ref={titleRef}
-              value={titol}
-              onChange={(e) => setTitol(e.target.value)}
-            />
-            <br />
-            {"Detalls: "}
-            <input
-              ref={detailsRef}
-              value={detalls}
-              onChange={(e) => setTDetalls(e.target.value)}
-            />
-            <br />
-            <input className="Boton" type="submit" value="Modificar" />
-          </form>
-        </div>
+        <ModificarTodo
+          todo={todo}
+          onTodoUpdated={onTodoUpdated}
+          mostrarForm={mostrarForm}
+          setMostrarForm={setMostrarForm}
+        />
       </div>
     </>
   );

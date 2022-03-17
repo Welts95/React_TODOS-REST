@@ -4,6 +4,18 @@ export async function getTodos() {
   return fetch(ENDPOINT).then((response) => response.json());
 }
 
+export async function getTodosCompletats() {
+  return fetch(`${ENDPOINT}/?completed=true`).then((response) =>
+    response.json()
+  );
+}
+
+export async function getTodosNoCompletats() {
+  return fetch(`${ENDPOINT}/?completed=false`).then((response) =>
+    response.json()
+  );
+}
+
 export async function postNewTodo(todo) {
   return fetch(ENDPOINT, {
     method: "POST",

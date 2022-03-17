@@ -4,7 +4,7 @@ html {
   background-repeat: no-repeat;
 }
 
-.App {
+h1 {
   text-align: center;
 }
 .Container {
@@ -14,10 +14,16 @@ html {
   margin: 0 auto 15px auto;
   padding: 20px 30px 20px 30px;
   background-color: rgba(242, 253, 253, 0.89);
+  text-align: right;
 }
 .Boton {
   font-size: 30px;
-  padding: 0 1rem 0 1rem;
+}
+
+.LlistaFiltrar {
+  font-size: 20px;
+  margin-right: 75px;
+  height: 40px;
 }
 
 .Boton,
@@ -91,8 +97,12 @@ input {
   width: auto;
 }
 
-input.Boton {
+input.BotonForm {
   font-size: 18px;
+}
+
+.InputForm {
+  width: 280px;
 }
 
 .Titol-TODO {

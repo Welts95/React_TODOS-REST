@@ -6,9 +6,12 @@ import {
   requestUpdateTodo,
   requestTodos,
   requestDeleteTodo,
+  requestTodosCompletats,
+  requestTodosNoCompletats,
 } from "./actions";
 import { useDispatch, useSelector } from "react-redux";
 import { selectTodos } from "./selectors";
+import { Filtres } from "./Filtres";
 
 export function Todos() {
   const todos = useSelector(selectTodos);
@@ -21,6 +24,8 @@ export function Todos() {
   }, []);
 
   const loadTodos = () => dispatch(requestTodos());
+  const loadTodosCompletats = () => dispatch(requestTodosCompletats());
+  const loadTodosNoCompletats = () => dispatch(requestTodosNoCompletats());
   const onAddTodo = (todo) => dispatch(requestAddTodo(todo));
   const onTodoUpdated = (todo) => dispatch(requestUpdateTodo(todo));
   const deleteTodo = (todo) => dispatch(requestDeleteTodo(todo));
@@ -29,6 +34,11 @@ export function Todos() {
     <div className="App">
       <h1>Llistat de TODOS</h1>
       <div className="Container">
+        <Filtres
+          tots={loadTodos}
+          completats={loadTodosCompletats}
+          noCompletats={loadTodosNoCompletats}
+        />
         <button className="Boton" onClick={loadTodos}>
           Refresh
         </button>
@@ -37,6 +47,7 @@ export function Todos() {
           todos={todos}
           onTodoUpdated={onTodoUpdated}
           onDeleteTodo={deleteTodo}
+          loadTodos={loadTodos}
         />
       </div>
     </div>

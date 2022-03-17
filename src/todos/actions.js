@@ -3,6 +3,16 @@ export function requestTodos() {
   return { type: REQUEST_TODOS };
 }
 
+export const REQUEST_TODOS_COMPLETATS = "todos/REQUEST_TODOS_COMPLETATS";
+export function requestTodosCompletats() {
+  return { type: REQUEST_TODOS_COMPLETATS };
+}
+
+export const REQUEST_TODOS_NO_COMPLETATS = "todos/REQUEST_TODOS_NO_COMPLETATS";
+export function requestTodosNoCompletats() {
+  return { type: REQUEST_TODOS_NO_COMPLETATS };
+}
+
 export const REQUEST_ADD_TODO = "todos/REQUEST_ADD_TODO";
 export function requestAddTodo(todo) {
   return { type: REQUEST_ADD_TODO, todo };

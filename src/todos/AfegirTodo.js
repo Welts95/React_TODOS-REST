@@ -17,12 +17,12 @@ export function AfegirTodo({ onAddTodo }) {
         }}
       >
         {"Títol: "}
-        <input ref={titleRef} />
+        <input className="InputForm" ref={titleRef} />
         <br />
         {"Detalls: "}
-        <input ref={detailsRef} />
+        <input className="InputForm" ref={detailsRef} />
         <br />
-        <input className="Boton" type="submit" value="Afegir" />
+        <input className="BotonForm" type="submit" value="Afegir" />
       </form>
     </div>
   );
