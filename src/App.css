@@ -79,6 +79,8 @@ li {
 
 li.completed {
   text-decoration: line-through;
+  text-decoration-thickness: 8px;
+  text-decoration-color: rgba(0, 0, 0, 0.575);
 }
 
 .FormulariAfegir-TODO {
