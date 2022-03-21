@@ -6,11 +6,10 @@ export function Filtres({ tots, completats, noCompletats }) {
 
   function canviarfiltre(clicat) {
     setSelected(clicat.target.value);
-    filtrar(selected);
+    filtrar(clicat.target.value);
   }
 
   function filtrar(clicat) {
-    console.log(clicat);
     switch (clicat) {
       case "Tots":
         tots();
@@ -27,14 +26,16 @@ export function Filtres({ tots, completats, noCompletats }) {
   }
 
   return (
-    <select
-      value={selected}
-      className="LlistaFiltrar"
-      onChange={(e) => canviarfiltre(e)}
-    >
-      <option value={filtres[0]}>{filtres[0]}</option>
-      <option value={filtres[1]}>{filtres[1]}</option>
-      <option value={filtres[2]}>{filtres[2]}</option>
-    </select>
+    <>
+      <select
+        value={selected}
+        className="LlistaFiltrar"
+        onChange={(e) => canviarfiltre(e)}
+      >
+        <option value={filtres[0]}>{filtres[0]}</option>
+        <option value={filtres[1]}>{filtres[1]}</option>
+        <option value={filtres[2]}>{filtres[2]}</option>
+      </select>
+    </>
   );
 }

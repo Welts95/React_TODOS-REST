@@ -1,6 +1,6 @@
 html {
-  background-color: #ffdee9;
-  background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+  background-color: #d7fff6;
+  background-image: linear-gradient(0deg, #d7fff6 0%, #96fcd5 100%);
   background-repeat: no-repeat;
 }
 
@@ -14,23 +14,15 @@ h1 {
   margin: 0 auto 15px auto;
   padding: 20px 30px 20px 30px;
   background-color: rgba(242, 253, 253, 0.89);
-  text-align: right;
-}
-.Boton {
-  font-size: 30px;
-}
-
-.LlistaFiltrar {
-  font-size: 20px;
-  margin-right: 75px;
-  height: 40px;
+  text-align: left;
 }
 
 .Boton,
 li,
 .Titol-TODO,
 .Item-TODO,
-.Detalls-TODO {
+.Detalls-TODO,
+.LlistaFiltrar {
   cursor: pointer;
 }
 
@@ -43,6 +35,32 @@ li,
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  -webkit-transition: all 0.75s ease;
+  -moz-transition: all 0.75s ease;
+  -ms-transition: all 0.75s ease;
+  transition: all 0.75s ease;
+}
+
+.Top {
+  display: flex;
+  text-align: left;
+  justify-content: space-between;
+}
+
+.LlistaFiltrar {
+  font-size: 20px;
+  width: 200px;
+  height: 40px;
+}
+
+.LlistaFiltrar option:checked {
+  font-weight: bold;
+}
+
+.Boton {
+  font-size: 25px;
+  width: max-content;
+  height: 40px;
 }
 
 .Item-TODO:hover {
@@ -73,6 +91,7 @@ li.completed {
 .FormulariModificar-TODO {
   margin-top: 5px;
   margin-left: auto;
+  animation: 1s down-enter;
 }
 
 .Modificar-TODO {

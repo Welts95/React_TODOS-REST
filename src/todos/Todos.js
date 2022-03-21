@@ -34,14 +34,17 @@ export function Todos() {
     <div className="App">
       <h1>Llistat de TODOS</h1>
       <div className="Container">
-        <Filtres
-          tots={loadTodos}
-          completats={loadTodosCompletats}
-          noCompletats={loadTodosNoCompletats}
-        />
-        <button className="Boton" onClick={loadTodos}>
-          Refresh
-        </button>
+        <label>Filtrar per: </label>
+        <div className="Top">
+          <Filtres
+            tots={loadTodos}
+            completats={loadTodosCompletats}
+            noCompletats={loadTodosNoCompletats}
+          />
+          <button className="Boton" onClick={loadTodos}>
+            Refresh
+          </button>
+        </div>
         <AfegirTodo onAddTodo={onAddTodo} />
         <TodoList
           todos={todos}
