@@ -9,7 +9,7 @@ h1 {
 }
 .Container {
   border: 2px solid rgba(0, 0, 0, 0.212);
-  width: 400px;
+  width: max-content;
   border-radius: 15px;
   margin: 0 auto 15px auto;
   padding: 20px 30px 20px 30px;
@@ -34,7 +34,7 @@ li,
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   -webkit-transition: all 0.75s ease;
   -moz-transition: all 0.75s ease;
   -ms-transition: all 0.75s ease;
@@ -59,7 +59,7 @@ li,
 
 .Boton {
   font-size: 25px;
-  width: max-content;
+  width: fit-content;
   height: 40px;
 }
 
