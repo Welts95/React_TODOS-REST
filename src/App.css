@@ -28,13 +28,13 @@ li,
 
 .Item-TODO {
   background-color: aquamarine;
-  width: auto;
+  width: 25em;
   border-radius: 5px;
   padding: 5px 10px 2px 10px;
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   -webkit-transition: all 0.75s ease;
   -moz-transition: all 0.75s ease;
   -ms-transition: all 0.75s ease;
